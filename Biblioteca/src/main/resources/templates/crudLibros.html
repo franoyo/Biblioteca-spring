@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link th:href="@{/styleCrudLibro.css}" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="put-logo">
+            <img class="img-logo" th:src="@{/logo.png}" alt="Logo">
+        </div>
+        <div class="put-title">
+            CULTURA Y LIBROS
+        </div>
+        <div class="put-input">
+            <input class="search" type="search">
+        </div>
+        <nav class="container-botones">
+            <a class="links" th:href="@{/index}">INICIO</a>
+            <a class="links" href="">CONTACTENOS</a>
+            <a class="links" th:href="@{/crudLibros}">LIBROS</a>
+            <a class="links" href="">AUTORES</a>
+            <a class="links" href="">LIBROS AUTOREADOS</a>
+        </nav>
+    </header>
+    <main class="main-container">
+        <div class="title-tabla-container">
+            <div class="middle">
+                Solicitud de libros
+            </div>
+            <div class="middle">
+                <div class="boton-container">
+                    <div class="put-button">
+                        <div class="circulo">+</div>
+                    </div>
+                    <div class="text">NUEVO LIBRO</div>
+                </div>
+            </div>
+        </div>
+        <div class="titles-table">
+            <div class="row-subtitle">ID LIBRO</div>
+            <div class="row-subtitle">NOMBRE</div>
+            <div class="row-subtitle">PRECIO</div>
+            <div class="row-subtitle">ISBN</div>
+            <div class="row-subtitle">ACCIONES</div>
+        </div>
+        <div class="tabla-container">
+            
+            <div class="row-content">
+                <div class="divisions"></div>
+                <div class="divisions"></div>
+                <div class="divisions"></div>
+                <div class="divisions"></div>
+                <div class="divisions"></div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer class="footer-container"></footer>
+</body>
+
+</html>

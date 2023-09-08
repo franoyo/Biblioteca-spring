@@ -7,12 +7,17 @@ package com.example.biblioteca.services.impl;
 import com.example.biblioteca.entity.Libro;
 import com.example.biblioteca.repository.LibroRepository;
 import com.example.biblioteca.services.lLibroService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author santiago
  */
+@Service
 public class LibroService implements lLibroService{
     
     @Autowired
@@ -32,7 +37,9 @@ public class LibroService implements lLibroService{
         // Lógica para eliminar un autor por su ID utilizando el autorRepositorio
         libroRepositorio.eliminarPorId(id);
     }
-
+    public List<Libro> findAll() {
+        return libroRepositorio.findAll();
+    }
     @Override
     public Libro guardar(Libro libro) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -47,5 +54,6 @@ public class LibroService implements lLibroService{
     public void eliminarPorId(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
     
 }

@@ -4,6 +4,8 @@
  */
 package com.example.biblioteca.services;
 
+import java.util.List;
+
 import com.example.biblioteca.entity.Libro;
 
 /**
@@ -16,5 +18,7 @@ public interface lLibroService {
     Libro encontarPorId(Long id);
 
     void eliminarPorId(Long id);
+
+    List<Libro> findAll();
 
 }
