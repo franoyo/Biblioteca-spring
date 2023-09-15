@@ -61,7 +61,11 @@ return "formAddLibro";
          System.out.println("Usuario eliminado con exito");
          return "redirect:/crudLibros";
     }
-    
+    @PostMapping("/actualizarLibro")
+public String actualizarLibro(@ModelAttribute Libro libro, BindingResult resultado){
+interfazServicio.actualizarLibro(libro);
+ return "redirect:/crudLibros";
+}    
  
     
 

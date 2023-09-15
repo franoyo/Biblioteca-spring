@@ -32,6 +32,8 @@ public class LibroServiceImpl implements IlibroService {
           
         Libro libroExistente = libroRepository.findById(libro.getLibroId()).get();
         libroExistente.setNombreLibro(libro.getNombreLibro());
+        libroExistente.setPrecioPublico(libro.getPrecioPublico());
+        libroExistente.setIsbn(libro.getIsbn());
 
         Libro libroUpdated = libroRepository.save(libroExistente);
         return libroUpdated;

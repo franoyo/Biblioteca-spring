@@ -13,8 +13,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 </head>
 
 <body>
-    <div th:replace="formAddLibro"></div>
-    <div th:replace="alertas/alertaEliminarLibro"></div>
+    <div th:replace="~{formAddLibro}"></div>
+    <div th:replace="~{alertas/alertaEliminarLibro}"></div>
     <header class="header-container">
         <div class="put-logo">
             <img class="img-logo" th:src="@{/logo.png}" alt="Logo">
@@ -57,13 +57,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div class="tabla-container">
 
             <div th:each="Libro: ${listica}" class="row-content">
+                <div th:replace="~{editarLibro}"></div>
                 <div class="divisions" th:text="${Libro.libroId}"></div>
                 <div class="divisions" th:text="${Libro.nombreLibro}"></div>
                 <div class="divisions" th:text="${Libro.precioPublico}"></div>
                 <div class="divisions" th:text="${Libro.isbn}"></div>
                 <div class="divisions" id="select-buttons">
 <a class="edit-buttons" href="" data-id="">V</a>
-<a class="edit-buttons" href="" data-id="">E</a>
+<a class="edit-buttons update-button" href="" th:data-id="${Libro.libroId}">E</a>
 <a class="edit-buttons delete-button" th:data-id="${Libro.libroId}">B</a>
                 </div>
             </div>
@@ -77,7 +78,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         function desplegarModal() {
             modal.classList.add("ver")
         }
-        function cerrarModal() {
+        function cerrarModalCito() {
             modal.classList.remove("ver")
 
         }
