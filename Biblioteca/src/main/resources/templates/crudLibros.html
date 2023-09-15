@@ -14,6 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 </head>
 
 <body>
+    <div th:include="formAddLibro"></div>
     <header class="header-container">
         <div class="put-logo">
             <img class="img-logo" th:src="@{/logo.png}" alt="Logo">
@@ -38,7 +39,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 Solicitud de libros
             </div>
             <div class="middle">
-                <div class="boton-container">
+                <div class="boton-container" onclick="desplegarModal()">
                     <div class="put-button">
                         <div class="circulo">+</div>
                     </div>
@@ -54,7 +55,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="row-subtitle">ACCIONES</div>
         </div>
         <div class="tabla-container">
-            
+
             <div class="row-content">
                 <div class="divisions"></div>
                 <div class="divisions"></div>
@@ -67,6 +68,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     </main>
     <footer class="footer-container"></footer>
+    <script>
+        const modal = document.getElementById("modal-main")
+        function desplegarModal() {
+            modal.classList.add("ver")
+        }
+        function cerrarModal() {
+            modal.classList.remove("ver")
+
+        }
+
+    </script>
 </body>
 
 </html>
