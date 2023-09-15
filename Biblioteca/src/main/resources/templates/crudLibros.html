@@ -10,11 +10,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
     <link th:href="@{/styleCrudLibro.css}" rel="stylesheet">
-    </link>
 </head>
 
 <body>
-    <div th:include="formAddLibro"></div>
+    <div th:replace="formAddLibro"></div>
+    <div th:replace="alertas/alertaEliminarLibro"></div>
     <header class="header-container">
         <div class="put-logo">
             <img class="img-logo" th:src="@{/logo.png}" alt="Logo">
@@ -56,12 +56,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </div>
         <div class="tabla-container">
 
-            <div class="row-content">
-                <div class="divisions"></div>
-                <div class="divisions"></div>
-                <div class="divisions"></div>
-                <div class="divisions"></div>
-                <div class="divisions"></div>
+            <div th:each="Libro: ${listica}" class="row-content">
+                <div class="divisions" th:text="${Libro.libroId}"></div>
+                <div class="divisions" th:text="${Libro.nombreLibro}"></div>
+                <div class="divisions" th:text="${Libro.precioPublico}"></div>
+                <div class="divisions" th:text="${Libro.isbn}"></div>
+                <div class="divisions" id="select-buttons">
+<a class="edit-buttons" href="" data-id="">V</a>
+<a class="edit-buttons" href="" data-id="">E</a>
+<a class="edit-buttons delete-button" th:data-id="${Libro.libroId}">B</a>
+                </div>
             </div>
 
         </div>
@@ -79,6 +83,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
 
     </script>
+    <script th:src="@{js/scriptAlerta.js}"></script>
 </body>
 
 </html>

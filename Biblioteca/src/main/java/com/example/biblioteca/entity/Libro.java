@@ -34,7 +34,7 @@ public class Libro  implements Serializable{
     
     @Column (length = 255, nullable = false)
     private double precioPublico;
-
+public Libro(){}
     public Libro(Long libroId, String isbn, String nombreLibro, double precioPublico) {
         this.libroId = libroId;
         this.isbn = isbn;

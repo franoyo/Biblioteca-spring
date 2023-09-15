@@ -127,3 +127,9 @@ body {
 	opacity: 1;
 	pointer-events: auto;
 }
+
+#select-buttons{
+justify-content: space-evenly;
+
+
+}

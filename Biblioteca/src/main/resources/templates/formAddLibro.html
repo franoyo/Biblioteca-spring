@@ -10,7 +10,7 @@
 
 <body>
     <div class="modal-container" id="modal-main">
-        <form class="form-container" th:action="@{/guardar}" method="post">
+        <form class="form-container" th:action="@{/guardar}" th:object="${libro}" method="post">
             <header class="put-title">
                 <div class="divi"></div>
                 <div class="divi">AGREGAR LIBRO</div>
@@ -25,7 +25,7 @@
                     <div class="subtitle">NOMBRE DEL LIBRO</div>
                     <div class="input">
                         <input style="width: 100%; height: 100%;border: solid #004aad 0.4vw;
-                        border-radius: 0.5vw;" type="text" name="nombre">
+                        border-radius: 0.5vw;" type="text" name="nombreLibro" >
                     </div>
                     <div class="subtitle">PRECIO</div>
                     <div class="input">
