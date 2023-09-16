@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <div class="modal-container" id="modal-main">
-        <form class="form-container" th:action="@{/guardar}" th:object="${libro}" method="post">
+    <div class="modal-container" th:id="'modal-ver'+${Libro.libroId}">
+        <div class="form-container">
             <header class="put-title">
                 <div class="divi"></div>
-                <div class="divi">AGREGAR LIBRO</div>
-                <div class="divi"> <input type="button" value="X" id="cerrar" onclick="cerrarModalCito()" class="botoncito">
+                <div class="divi">VER LIBRO</div>
+                <div class="divi"> <input type="button" value="X" id="cerrar-editar" class="botoncito">
                 </div>
 
 
@@ -24,26 +24,26 @@
                 <div class="inps">
                     <div class="subtitle">NOMBRE DEL LIBRO</div>
                     <div class="input">
+                        <input type="hidden" th:value="${Libro.libroId}" name="libroId">
                         <input style="width: 100%; height: 100%;border: solid #004aad 0.4vw;
-                        border-radius: 0.5vw;" type="text" name="nombreLibro" >
+                        border-radius: 0.5vw;" type="text" name="nombreLibro" th:value="${Libro.nombreLibro}" readonly >
                     </div>
                     <div class="subtitle">PRECIO</div>
                     <div class="input">
                         <input style="width: 100%; height: 100%;border: solid #004aad 0.4vw;
-                        border-radius: 0.5vw;" type="number" name="precioPublico">
+                        border-radius: 0.5vw;" type="number" name="precioPublico" th:value="${Libro.precioPublico}" readonly>
                     </div>
                 </div>
                 <div class="second">
                     <div class="subtitle">ISBN</div>
                     <div class="input"> <input style="width: 100%; height: 100%;border: solid #004aad 0.4vw;
-                        border-radius: 0.5vw;" type="text" name="isbn"></div>
+                        border-radius: 0.5vw;" type="text" name="isbn" th:value="${Libro.isbn}" readonly></div>
                 </div>
             </div>
             <div class="boton-container">
-                <input class="btn" type="submit" value="AÑADIR LIBRO">
             </div>
 
-        </form>
+        </div>
 
     </div>
 </body>

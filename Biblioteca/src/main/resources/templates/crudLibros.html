@@ -58,12 +58,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             <div th:each="Libro: ${listica}" class="row-content">
                 <div th:replace="~{editarLibro}"></div>
+                <div th:replace="~{verFormulario}"></div>
                 <div class="divisions" th:text="${Libro.libroId}"></div>
                 <div class="divisions" th:text="${Libro.nombreLibro}"></div>
                 <div class="divisions" th:text="${Libro.precioPublico}"></div>
                 <div class="divisions" th:text="${Libro.isbn}"></div>
                 <div class="divisions" id="select-buttons">
-<a class="edit-buttons" href="" data-id="">V</a>
+<a class="edit-buttons see-button" href="" th:data-id="${Libro.libroId}">V</a>
 <a class="edit-buttons update-button" href="" th:data-id="${Libro.libroId}">E</a>
 <a class="edit-buttons delete-button" th:data-id="${Libro.libroId}">B</a>
                 </div>
