@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+    <link rel="stylesheet" th:href="@{/styleLibroAdd.css}">
+</head>
+
+<body>
+    <div class="modal-container" th:id="'modal-editar'+${Autor.autorId}">
+        <form class="form-container" th:action="@{/actualizarAutor}" th:object="${autor}" method="post">
+            <header class="put-title">
+                <div class="divi"></div>
+                <div class="divi">EDITAR AUTOR</div>
+                <div class="divi"> <input type="button" value="X" id="cerrar-editar" class="botoncito">
+                </div>
+
+
+
+            </header>
+            <div class="cuerpo-form">
+                <div class="inps">
+                    <div class="subtitle">NOMBRE DEL AUTOR</div>
+                    <div class="input">
+                        <input type="hidden" th:value="${Autor.autorId}" name="autorId">
+                        <input style="width: 100%; height: 100%;border: solid #004aad 0.4vw;
+                        border-radius: 0.5vw;" type="text" name="nombre" th:value="${Autor.nombre}" required >
+                    </div>
+                    <div class="subtitle">CIUDAD</div>
+                    <div class="input">
+                        <input style="width: 100%; height: 100%;border: solid #004aad 0.4vw;
+                        border-radius: 0.5vw;" type="text" name="ciudad" th:value="${Autor.ciudad}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="boton-container">
+                <input class="btn" type="submit" value="ACTUALIZAR">
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

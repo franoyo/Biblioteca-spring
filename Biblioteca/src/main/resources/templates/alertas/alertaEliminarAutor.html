@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/styleAlerta.css}">
+</head>
+<body>
+    <div id="alerta" class="container-alerta">
+        <form th:action="@{/eliminarAutor}" class="alerta-body" method="post">
+<div class="part-main-info">
+    <img class="icono" th:src="@{/giphy.gif}" alt="">
+
+    <div class="mete-info">
+        <div class="text-info">
+            ESTA SEGURO DE ELIMINAR EL AUTOR DE ID:
+        </div>
+        <div class="put-id">
+            <input type="text" name="autorId"  readonly id="input-id">
+        </div>
+    </div>
+</div>
+<div class="part-put-buttons">
+    <input class="botoncitos" type="submit" value="SI">
+    <input class="botoncitos" type="button" id="zerrar" value="NO">
+    
+</div>
+
+        </form>
+    </div>
+    
+</body>
+</html>

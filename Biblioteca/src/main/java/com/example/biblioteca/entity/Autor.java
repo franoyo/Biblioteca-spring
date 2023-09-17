@@ -17,31 +17,33 @@ import java.io.Serializable;
  * @author santiago
  */
 @Entity
-@Table (name = "autor")
+@Table(name = "autor")
 
-public class Autor  implements Serializable {
-    
-      private static final long serialVersionUID = 1L;
-      
+public class Autor implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long autorId;
-    
-    @Column (length = 255, nullable = false)
+
+    @Column(length = 255, nullable = false)
     private String nombre;
-    
-    @Column (length = 255, nullable = false)
+
+    @Column(length = 255, nullable = false)
     private String ciudad;
-    
-    //Constrctor
+
+    // Constrctor
+
+    public Autor() {
+
+    }
 
     public Autor(Long autorId, String nombre, String ciudad) {
         this.autorId = autorId;
         this.nombre = nombre;
         this.ciudad = ciudad;
     }
-    
-    
 
     public Long getAutorId() {
         return autorId;
@@ -66,7 +68,5 @@ public class Autor  implements Serializable {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-    
-    
-   
+
 }
