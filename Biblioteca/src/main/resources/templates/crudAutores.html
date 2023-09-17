@@ -30,7 +30,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <a class="links" href="">CONTACTENOS</a>
             <a class="links" th:href="@{/crudLibros}">LIBROS</a>
             <a class="links" th:href="@{/crudAutores}">AUTORES</a>
-            <a class="links" href="">LIBROS AUTOREADOS</a>
+            <a class="links" th:href="@{/crudLibrosAutoreados}">LIBROS AUTOREADOS</a>
         </nav>
     </header>
     <main class="main-container">
@@ -61,7 +61,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="divisions" th:text="${Autor.nombre}"></div>
                 <div class="divisions" th:text="${Autor.ciudad}"></div>
                 <div class="divisions" id="select-buttons">
-                    <a class="edit-buttons" href="" data-id="">V</a>
                     <a class="edit-buttons update-button" href="" th:data-id="${Autor.autorId}">E</a>
                     <a class="edit-buttons delete-button" th:data-id="${Autor.autorId}">B</a>
                 </div>
