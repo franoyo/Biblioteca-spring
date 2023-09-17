@@ -74,3 +74,19 @@ verButton.forEach(function(button1) {
 function cerrarModal(modalId, modalc) {
   modalc.classList.remove('ver')// Quitar la clase "aparecer" para ocultar el modal
 }
+
+
+const botonDerecho=document.getElementById("der")
+const botonIzquierdo=document.getElementById("izq")
+const tabla=document.getElementById("tabla")
+botonDerecho.addEventListener('click', () => {
+  const porcentajeDesplazamiento = 100;
+  const desplazamiento = tabla.offsetWidth * (porcentajeDesplazamiento / 100);
+   tabla.scrollLeft+=desplazamiento;
+})
+
+botonIzquierdo.addEventListener('click', () => {
+  const porcentajeDesplazamiento = 100;
+  const desplazamiento = tabla.offsetWidth * (porcentajeDesplazamiento / 100);
+   tabla.scrollLeft-=desplazamiento;
+})

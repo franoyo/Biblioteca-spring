@@ -11,7 +11,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
+
 
 /**
  *
@@ -26,17 +27,15 @@ public class LibroAutoreado  implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long autorId;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column (length = 255, nullable = false)
+
     private Long libroId;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column (length = 255, nullable =false)
     private Date fecha;
-    
     @Column (length = 255, nullable = false)
     private String observaciones;
-
+public LibroAutoreado(){
+}
     public LibroAutoreado(Long autorId, Long libroId, Date fecha, String observaciones) {
         this.autorId = autorId;
         this.libroId = libroId;

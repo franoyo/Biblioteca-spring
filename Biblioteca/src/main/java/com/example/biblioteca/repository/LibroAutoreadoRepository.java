@@ -5,11 +5,14 @@
 package com.example.biblioteca.repository;
 
 import org.springframework.stereotype.Repository;
-
+import com.example.biblioteca.entity.LibroAutoreado;
+import org.springframework.data.jpa.repository.JpaRepository;
 /**
  *
  * @author santiago
  */
 @Repository
-public class LibroAutoreadoRepository {
+public interface LibroAutoreadoRepository extends JpaRepository<LibroAutoreado, Long> {
+
+
 }

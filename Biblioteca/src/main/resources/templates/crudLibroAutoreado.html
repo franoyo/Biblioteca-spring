@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca</title>
+    <title>Crud Libro Autoreado</title>
     <link th:href="@{/styleCrudLibro.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-
 <body>
     <div class="desplazar-button">
-<button id="izq" class="ton"><i class="bi bi-chevron-left"></i></button>
-<button id="der" class="ton"><i class="bi bi-chevron-right"></i></button>
-
-    </div>
-    <div th:replace="~{formAddLibro}"></div>
-    <div th:replace="~{alertas/alertaEliminarLibro}"></div>
+        <button id="izq" class="ton"><i class="bi bi-chevron-left"></i></button>
+        <button id="der" class="ton"><i class="bi bi-chevron-right"></i></button>
+        
+            </div>
+    <div th:replace="~{agregarAutoreado}"></div>
+    <div th:replace="~{alertas/eliminarAutoreado}"></div>
     <header class="header-container">
         <div class="put-logo">
             <img class="img-logo" th:src="@{/logo.png}" alt="Logo">
@@ -36,7 +30,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <a class="links" href="">CONTACTENOS</a>
             <a class="links" th:href="@{/crudLibros}">LIBROS</a>
             <a class="links" href="">AUTORES</a>
-            <a class="links" th:href="@{/crudLibrosAutoreados}">LIBROS AUTOREADOS</a>
+            <a class="links" href="">LIBROS AUTOREADOS</a>
         </nav>
     </header>
     <main class="main-container">
@@ -55,24 +49,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </div>
         <div class="titles-table">
             <div class="row-subtitle">ID LIBRO</div>
-            <div class="row-subtitle">NOMBRE</div>
-            <div class="row-subtitle">PRECIO</div>
-            <div class="row-subtitle">ISBN</div>
+            <div class="row-subtitle">ID AUTOR</div>
+            <div class="row-subtitle">FECHA</div>
+            <div class="row-subtitle">OBSERVACIONES</div>
             <div class="row-subtitle">ACCIONES</div>
         </div>
         <div id="tabla" class="tabla-container">
 
-            <div th:each="Libro: ${listica}" class="row-content">
-                <div th:replace="~{editarLibro}"></div>
-                <div th:replace="~{verFormulario}"></div>
-                <div class="divisions" th:text="${Libro.libroId}"></div>
-                <div class="divisions" th:text="${Libro.nombreLibro}"></div>
-                <div class="divisions" th:text="${Libro.precioPublico}"></div>
-                <div class="divisions" th:text="${Libro.isbn}"></div>
+            <div th:each="LibroAutoreado: ${lista}" class="row-content">
+                <div th:replace="~{actualizarLibroAutoreado}"></div>
+                <div class="divisions" th:text="${LibroAutoreado.libroId}"></div>
+                <div class="divisions" th:text="${LibroAutoreado.autorId}"></div>
+                <div class="divisions" th:text="${LibroAutoreado.fecha}"></div>
+                <div class="divisions" th:text="${LibroAutoreado.observaciones}"></div>
                 <div class="divisions" id="select-buttons">
-<a class="edit-buttons see-button" href="" th:data-id="${Libro.libroId}"><i class="bi bi-eye-fill"></i></a>
-<a class="edit-buttons update-button" href="" th:data-id="${Libro.libroId}"><i class="bi bi-pen-fill"></i></a>
-<a class="edit-buttons delete-button" th:data-id="${Libro.libroId}"><i class="bi bi-trash3-fill"></i></a>
+<a class="edit-buttons update-button" href="" th:data-id="${LibroAutoreado.autorId}"><i class="bi bi-pencil-fill"></i></a>
+<a class="edit-buttons delete-button" th:data-id="${LibroAutoreado.autorId}"><i class="bi bi-trash2-fill"></i></a>
                 </div>
             </div>
 
@@ -91,7 +83,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
 
     </script>
-    <script th:src="@{js/scriptAlerta.js}"></script>
+    <script th:src="@{js/scriptAlerta.js}"></script>   
 </body>
-
 </html>
